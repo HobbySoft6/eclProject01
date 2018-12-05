@@ -1,2 +1,2 @@
-a := 'this is an ecl';
+a := 'this is one ecl';
 output(a);
