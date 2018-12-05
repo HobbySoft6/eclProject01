@@ -12,6 +12,9 @@ pipeline {
                 echo 'Hello world22!'
                 sh 'cd /opt/HPCCSystems/7.0.2/clienttools/bin'
                 sh 'sudo eclcc -syntax ecl01.ecl'
+                sh 'sudo eclcc ecltest01.ecl'
+                sh 'sudo ./a.out'
+
             }   
         }
     }
