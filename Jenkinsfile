@@ -4,6 +4,7 @@ pipeline {
         stage('syntax check') {
             steps {
                 sh 'cd /opt/HPCCSystems/7.0.2/clienttools/bin'
+                sh 'sudo eclcc -syntax TestModule.ecl'
                 sh 'sudo eclcc -syntax ecl01.ecl' 
             }
         }
