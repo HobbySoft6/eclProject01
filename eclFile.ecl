@@ -6,5 +6,5 @@ shared add1(integer a1, integer a2) := function
 	 
 	 
 	 a := add1(12, 13);
-   output(a);
+   output1(a);
 
