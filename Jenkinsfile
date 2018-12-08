@@ -4,15 +4,25 @@ pipeline {
         stage('syntax check') {
             steps {
                 sh 'cd /opt/HPCCSystems/7.0.2/clienttools/bin'
-                sh 'sudo eclcc -syntax TestModule.ecl'
-                sh 'sudo eclcc -syntax ecl01.ecl' 
+                sh 'sudo eclcc -syntax eclFile.ecl'
+                sh 'sudo eclcc -syntax eclTest.ecl' 
             }
         }
         stage('compile') {
             steps {                               
-                sh 'sudo eclcc ecl01.ecl'
+                sh 'sudo eclcc eclFile.ecl'                
+            }   
+        }
+        stage('test') {
+            steps {                               
+                sh 'sudo eclcc eclTest.ecl'
                 sh 'sudo ./a.out'
 
+            }   
+        }
+        stage('deploy and run') {
+            steps {                               
+                sh 'sudo eclplus @eclFile.ecl'                
             }   
         }
     }
