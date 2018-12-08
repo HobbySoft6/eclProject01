@@ -22,7 +22,7 @@ pipeline {
         }
         stage('deploy and run') {
             steps {                               
-                sh 'sudo eclplus @eclFile.ecl'                
+                sh 'sudo eclplus @eclFile.ecl server=10.144.162.1 user=jfeng password=Lexisfjc cluster=thor50_b'                
             }   
         }
     }
