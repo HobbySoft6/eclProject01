@@ -1,10 +1,9 @@
-shared add1(integer a1, integer a2) := function
-   a := a1 + a2;
-	 //output(a, named('thisisthec'));
-	 return a;
-	 end;
-	 
-	 
-	 a := add1(12, 13);
-   output1(a);
+import $;
+
+result1 := $.eclModule().add1(11, 15);
+
+finalResult := result1 + 26;
+
+output(finalResult);
+
 
