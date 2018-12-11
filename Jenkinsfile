@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('syntax check') {
             steps {
-                
+                sh 'pwd'
                 sh 'sudo eclcc -syntax eclFile.ecl'
                 sh 'sudo eclcc -syntax eclTest.ecl'
                 sh 'sudo eclcc -syntax eclModule.ecl'
