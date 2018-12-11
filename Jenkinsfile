@@ -3,23 +3,23 @@ pipeline {
     stages {
         stage('syntax check') {
             steps {
-                sh 'cd ~'
-                sh 'eclcc -syntax eclFile.ecl'
-                sh 'eclcc -syntax eclTest.ecl'
-                sh 'eclcc -syntax eclModule.ecl'
+                
+                sh 'sudo eclcc -syntax eclFile.ecl'
+                sh 'sudo eclcc -syntax eclTest.ecl'
+                sh 'sudo eclcc -syntax eclModule.ecl'
             }
         }
         
         stage('test') {
             steps {                               
-                sh 'eclcc eclTest.ecl'
+                sh 'sudo eclcc eclTest.ecl'
                 sh './a.out'
             }   
         }
 
         stage('compile') {
             steps {                               
-                sh 'eclcc eclFile.ecl'                
+                sh 'sudo eclcc eclFile.ecl'                
             }
         }
    
