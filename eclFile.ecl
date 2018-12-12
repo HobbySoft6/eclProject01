@@ -8,6 +8,6 @@ finalResult := result1 + 26;
 
 output(finalResult);
 
-output(result2);
+output1(result2);
 
 
